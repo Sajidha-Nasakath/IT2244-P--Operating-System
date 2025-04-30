@@ -1,0 +1,189 @@
+//List all files in the directory
+{ ~ }  » ls -a
+.                  .ex5.sh.un~      .prgrm1.sh.un~                    employee.csv~  example.sh~
+..                 .example.sh.un~  .profile                          ex1.sh         file01.tsv
+.babunrc           .file01.tsv.un~  .vim                              ex1.sh~        file01.tsv~
+.bash_history      .gitconfig       .viminfo                          ex2.sh         file1.txt
+.bash_profile      .inputrc         .zcompdump                        ex2.sh~        maths.sh
+.bashrc            .local           .zcompdump-DESKTOP-GARLJAI-5.0.6  ex3.sh         new.txt
+.day.sh.un~        .maths.sh.un~    .zshrc                            ex3.sh~        new.txt~
+.employee.csv.un~  .minttyrc        .zsh-update                       ex4.sh         newfile.txt
+.ex1.sh.un~        .new.txt.un~     bin                               ex4.sh~        oldICA.sh
+.ex2.sh.un~        .oh-my-zsh       day.sh                            ex5.sh         oldICA.sh~
+.ex3.sh.un~        .oldICA.sh.un~   day.sh~                           ex5.sh~        pr1.sh
+.ex4.sh.un~        .pact            employee.csv                      example.sh     prgrm1.sh
+
+//Creates a file
+{ ~ }  » touch file01.tsv
+
+//Open the file using the "vi" text editor.
+{ ~ }  » vi file01.tsv
+
+//Extracts the tab seperated first column.
+{ ~ }  » cut -d$'\t' -f1 file01.tsv
+aa
+bb
+cc
+dd
+ee
+ff
+gg
+hh
+
+// Extracts the third column using space as a delimiter
+{ ~ }  » cut -d " " -f3 file01.tsv
+aa      1       2       3
+bb      2       3       4
+cc      3       4       5
+dd      4       5       6
+ee      5       6       7
+ff      6       7       8
+gg      7       8       9
+hh      8       9       10
+
+// Extracts the third column using tab as a delimiter
+{ ~ }  » cut -d$'\t' -f3 file01.tsv
+2
+3
+4
+5
+6
+7
+8
+9
+
+//Displays the first 2 lines
+{ ~ }  » head -n2 file01.tsv
+aa      1       2       3
+bb      2       3       4
+
+//Displays the last 2 lines
+{ ~ }  » tail -n2 file01.tsv
+gg      7       8       9
+hh      8       9       10
+
+// Extracts the 8th line.
+{ ~ }  » head -n8 file01.tsv | tail -n1
+hh      8       9       10
+
+
+{ ~ }  » awk '{print'} file01.tsv
+-bash: awk: command not found
+{ ~ }  » awk '{print NF; exit'} file01.tsv
+-bash: awk: command not found
+{ ~ }  » awk '{print $3'} file01.tsv
+-bash: awk: command not found
+
+// Extracts the tab seperated first column.
+{ ~ }  » cut -d\t -f1 file01.tsv
+aa      1       2       3
+bb      2       3       4
+cc      3       4       5
+dd      4       5       6
+ee      5       6       7
+ff      6       7       8
+gg      7       8       9
+hh      8       9       10
+
+// Display first 5 lines (from head)
+{ ~ }  » head -5 file01.tsv
+aa      1       2       3
+bb      2       3       4
+cc      3       4       5
+dd      4       5       6
+ee      5       6       7
+
+//Display last 5 lines
+{ ~ }  » tail -5 file01.tsv
+dd      4       5       6
+ee      5       6       7
+ff      6       7       8
+gg      7       8       9
+hh      8       9       10
+
+// Display first line.
+{ ~ }  » head -1 file01.tsv
+aa      1       2       3
+
+// Display last line.
+{ ~ }  » tail -1 file01.tsv
+hh      8       9       10
+
+//Edit the same file by removing tabs and adding spaces between values
+{ ~ }  » vi file01.tsv
+
+// Again Extracts the tab seperated first column.
+{ ~ }  » cut -d\t -f1 file01.tsv
+aa 1 2 3
+bb 2 3 4
+cc 3 4 5
+dd 4 5 6
+ee 5 6 7
+ff 6 7 8
+gg 7 8 9
+hh 8 9 10
+
+// Display first 5 lines (from head).
+{ ~ }  » head -5 file01.tsv
+aa 1 2 3
+bb 2 3 4
+cc 3 4 5
+dd 4 5 6
+ee 5 6 7
+
+// Display last 5 lines 
+{ ~ }  » tail -5 file01.tsv
+dd 4 5 6
+ee 5 6 7
+ff 6 7 8
+gg 7 8 9
+hh 8 9 10
+
+//Extracts the space seperated first column.
+{ ~ }  » cut -d' ' -f1 file01.tsv
+aa
+bb
+cc
+dd
+ee
+ff
+gg
+hh
+
+// Extracts the space seperated second column.
+{ ~ }  » cut -d' ' -f3 file01.tsv
+2
+3
+4
+5
+6
+7
+8
+9
+
+// Display first line.
+{ ~ }  » head -1 file01.tsv
+aa 1 2 3
+
+// Display last line.
+{ ~ }  » tail -1 file01.tsv
+hh 8 9 10
+
+// Extracts the 8th line.
+{ ~ }  » head -n8 file01.tsv | tail -n1
+hh 8 9 10
+
+//Count the number of lines.
+{ ~ }  » wc -l file01.tsv
+8 file01.tsv
+
+// Searching for "dd" in those first 10 lines by extracting the first 10 lines
+{ ~ }  » head -n5 file01.tsv | grep 'dd'
+dd 4 5 6
+
+// Searching for "6" in those first 10 lines by extracting the first 10 lines
+{ ~ }  » head -n7 file01.tsv | grep '6'
+dd 4 5 6
+ee 5 6 7
+ff 6 7 8
+

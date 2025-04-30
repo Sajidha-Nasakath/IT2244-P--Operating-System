@@ -1,0 +1,132 @@
+//Displays the calendar
+{ ~ }  » cal
+     April 2025
+Su Mo Tu We Th Fr Sa
+       1  2  3  4  5
+ 6  7  8  9 10 11 12
+13 14 15 16 17 18 19
+20 21 22 23 24 25 26
+27 28 29 30
+
+//prints the current day of the month (as a two-digit number)
+{ ~ }  » date +%d
+30
+
+//Display the current date in MM/DD/YY format
+{ ~ }  » date +%D
+04/30/25
+
+//Display the last two digits of the current year
+{ ~ }  » date +%y
+25
+
+//Display the current year in four-digit format(Full year (2025))
+{ ~ }  » date +%Y
+2025
+
+//Display the abbreviated weekday name (first three letters of the day)
+{ ~ }  » date +%a
+Wed
+
+//Display the full weekday name
+{ ~ }  » date +%A
+Wednesday
+
+//Display the abbreviated month name
+{ ~ }  » date +%b
+Apr
+
+//Display the full month name
+{ ~ }  » date +%B
+April
+
+//Outputs the abbreviated month name (like Jan, Feb, Mar etc)
+{ ~ }  » date +%h
+Apr
+
+//Outputs the current hour in 24-hour format (00 to 23)
+{ ~ }  » date +%H
+22
+
+//Prompt for User Name
+{ ~ }  » echo "Who are you?"
+Who are you?
+{ ~ }  » read name
+Sajidha
+
+//Read Three Numbers
+{ ~ }  » echo "Enter Number1: "
+Enter Number1:
+{ ~ }  » read x
+10
+{ ~ }  » echo "Enter Number2: "
+Enter Number2:
+{ ~ }  » read y
+20
+{ ~ }  » echo "Enter Number3: "
+Enter Number3:
+{ ~ }  » read z
+30
+
+//Summation of the numbers
+{ ~ }  » sum=$(($x+$y+$z))
+
+//Average of the numbers
+{ ~ }  » avg=$(($sum/3))
+
+//Displaying the results
+{ ~ }  » echo "Hi " $name
+Hi  Sajidha
+{ ~ }  » echo "Summation " $sum
+Summation  60
+{ ~ }  » echo "Average = " $avg
+Average =  20
+
+Exercise
+Read 2 numbers from the user and print
+addition,subtraction,multiplication,division
+
+echo "Enter num1: "
+read num1
+echo "Enter num2: "
+read num2
+
+Addition=$(($num1+$num2))
+Subtraction=$(($num1-$num2))
+Multiplication=$(($num1*$num2))
+Division=$(($num1/$num2))
+
+
+//Asking users to Input Numbers
+{ ~ }  » echo "Enter num1: "
+Enter num1:
+{ ~ }  » read num1
+30
+{ ~ }  » echo "Enter num2: "
+Enter num2:
+{ ~ }  » read num2
+10
+
+//Performs Arithmatic functions
+
+//Addition
+{ ~ }  » Addition=$(($num1+$num2))
+
+//Subtraction
+{ ~ }  » Subtraction=$(($num1-$num2))
+
+//Multiplication
+{ ~ }  » Multiplication=$(($num1*$num2))
+
+//Division
+{ ~ }  » Division=$(($num1/$num2))
+
+//Displaying results
+{ ~ }  » echo "Addition = " $Addition
+Addition =  40
+{ ~ }  » echo "Subtraction = " $Subtraction
+Subtraction =  20
+{ ~ }  » echo "Multiplication = " $Multiplication
+Multiplication =  300
+{ ~ }  » echo "Division = " $Division
+Division =  3

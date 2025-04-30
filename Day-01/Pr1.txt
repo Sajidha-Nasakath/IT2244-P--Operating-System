@@ -1,0 +1,93 @@
+::Create the 1st criteria directory
+mkdir Criteria_1
+
+::Move into the Criteria_1 directory
+cd Criteria_1
+
+::Create 3 standard subdirectories inside Criteria_1
+mkdir Standard_1
+mkdir Standard_2
+mkdir Standard_3
+
+::Move back to the parent directory
+cd..
+
+::Create the 2nd criteria directory
+mkdir Criteria_2
+
+::Move into the Criteria_2 directory
+cd Criteria_2
+
+::Create 3 standard subdirectories inside Criteria_2
+mkdir Standard_1
+mkdir Standard_2
+mkdir Standard_3
+
+::Move back to the parent directory
+cd.. 
+
+::Create the 3rd criteria directory
+mkdir Criteria_3
+
+::Move into the Criteria_3 directory
+cd Criteria_3
+
+::Create 4 standard subdirectories inside Criteria_3
+mkdir Standard_1
+mkdir Standard_2
+mkdir Standard_3
+mkdir Standard_4
+
+::Move back to the parent directory
+cd..
+
+::Create the 4th criteria directory
+mkdir Criteria_4
+
+::Move into the Criteria_4 directory
+cd Criteria_4
+
+::Create 5 standard subdirectories inside Criteria_4
+mkdir Standard_1
+mkdir Standard_2
+mkdir Standard_3
+mkdir Standard_4
+mkdir Standard_5
+
+::Move back to the parent directory
+cd..
+
+::Create the 5th criteria directory
+mkdir Criteria_5
+
+::Move into the Criteria_5 directory
+cd Criteria_5
+
+::Create 2 standard subdirectories inside Criteria_5
+mkdir Standard_1
+mkdir Standard_2
+
+::Move back to the parent directory
+cd..
+
+::Create the 6th criteria directory
+mkdir Criteria_6
+
+::Move into the Criteria_6 directory
+cd Criteria_6
+
+::Create 5 standard subdirectories inside Criteria_6
+mkdir Standard_1
+mkdir Standard_2
+mkdir Standard_3
+mkdir Standard_4
+mkdir Standard_5
+
+::Move back to the parent directory
+cd..
+
+::Create the 7th criteria directory
+mkdir Criteria_7
+
+::Create the 8th criteria directory
+mkdir Criteria_8

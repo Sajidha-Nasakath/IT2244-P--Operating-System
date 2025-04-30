@@ -1,0 +1,12 @@
+::Disables the command echoing in the terminal for cleaner output
+@echo off
+
+::Prompts the user to enter their birth year 
+set /p birth_year=Enter your birth year:
+
+::set current_year=%DATE:~10,4%
+set /a age=%DATE:~10,4% - %birth_year%
+echo your age is %age% years old.
+
+::Pauses the script and waits for the user to press any key before closing the window.
+pause

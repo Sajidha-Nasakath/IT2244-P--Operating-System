@@ -1,0 +1,11 @@
+:: Prevents the display of each command
+@echo off 
+
+::display the current date 
+echo Current date: %DATE% 
+
+::display the current time 
+echo Current time: %TIME% 
+
+::pauses the script
+pause

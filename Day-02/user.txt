@@ -1,0 +1,12 @@
+:: Prevents the display of each command
+@echo off 
+
+:: display the user's username
+echo Username: %username% 
+
+:: display the windows version
+echo Windows version: 
+ver 
+
+:: Pauses the script 
+pause 

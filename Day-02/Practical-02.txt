@@ -1,0 +1,20 @@
+:: Prevents the display of each command
+@echo off
+
+::Displays the full current date
+ echo Today is: %date%  
+
+::Displays the current Month
+ echo Current Month: %date:~4,2%
+
+::Displays the day of the week
+ echo Day is:%date:~0,3%
+
+::Displays the day of the month 
+ echo Date is:%date:~7,2%
+
+::Displays the Year
+ echo Year is:%date:~10,4%
+ 
+::pauses the script
+ pause

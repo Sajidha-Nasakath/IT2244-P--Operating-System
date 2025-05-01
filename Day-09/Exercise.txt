@@ -1,0 +1,157 @@
+Q1)Print multiplication table using for loop
+1 x 2 = 2
+2 x 2 = 4
+......
+
+Answer:
+
+{ ~ }  » touch mul_table.sh
+{ ~ }  » vi mul_table.sh
+
+echo 'Multiplication Table'
+ echo 'Enter number: '
+ read num
+ 
+ for ((i=1; i<=10; i++))
+ do
+ a=$(($i*$num))
+ echo -n  $i ' X ' $num ': ' $a
+ echo ''
+ done
+
+{ ~ }  » chmod 777 mul_table.sh
+{ ~ }  » ./mul_table.sh
+Enter number:
+2
+1 x 2  :  2
+2 x 2  :  4
+3 x 2  :  6
+4 x 2  :  8
+5 x 2  :  10
+6 x 2  :  12
+7 x 2  :  14
+8 x 2  :  16
+9 x 2  :  18
+10 x 2  :  20
+
+
+
+Q2)   *
+     ***
+    *****
+   *******
+  *********
+   *******
+    *****
+     ***
+      *
+
+Answer:
+
+{ ~ }  » touch diamond.sh
+{ ~ }  » vi diamond.sh
+
+#Number of rows (half of the diamond's height)
+rows=5
+
+#Top half of the diamond
+for (( i=1; i<=rows; i++))
+do
+for (( j=i; j<rows; j++ ))
+do
+echo -n " "
+done
+for (( k=1; k<=((2*i-1)); k++))
+do
+echo -n "*"
+done
+echo
+done
+
+#Bottom half of the diamond
+for (( i=rows-1; i>=1; i-- ))
+do 
+for (( j=rows; j>i; j-- ))
+do
+echo -n " "
+done
+for (( k=1; k<=((2*i-1)); k++))
+do
+echo -n "*"
+done 
+echo
+done
+
+{ ~ }  » chmod 777 diamond.sh
+{ ~ }  » ./diamond.sh
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+
+ 
+Q3)Fibonacci series:
+   0 1 1 2 3 5 8 13 21 34
+   Sum of the first 10 Fibonacci numbers: 55
+
+Answer:
+
+{ ~ }  » touch fibonacci.sh
+{ ~ }  » vi fibonacci.sh
+
+n=10
+a=0
+b=1
+for((i=0; i<n; i++))
+do
+echo -n "$a "
+fn=$((a+b))
+a=$b
+b=$fn
+done
+
+echo ''
+
+echo "Sum of the first 10 Fibonacci numbers: " $a
+
+{ ~ }  » chmod 777 fibonacci.sh
+{ ~ }  » ./fibonacci.sh
+0 1 1 2 3 5 8 13 21 34
+Sum of the first 10 Fibonacci numbers:  55
+
+
+Q4)Sum of prime numbers between 1 and 100 is : 1060
+
+Answer:
+
+{ ~ }  » touch prime_numbers.sh
+{ ~ }  » vi prime_numbers.sh
+
+sum=0
+ 
+ for (( num=2; num<=100; num++ ))
+ do
+     is_prime=1
+     for (( i=2; i*i<=num; i++ ))
+     do
+         if (( num % i == 0 )); then
+             is_prime=0
+             break
+         fi
+     done
+ 
+     if (( is_prime == 1 )); then
+         sum=$((sum + num))
+     fi
+ done
+ 
+ echo "Sum of prime numbers from 1 to 100 is: $sum"
+ 
+{ ~ }  » chmod 777 prime_numbers.sh
+{ ~ }  » ./prime_numbers.sh
+Sum of prime numbers from 1 to 100 is : 1060

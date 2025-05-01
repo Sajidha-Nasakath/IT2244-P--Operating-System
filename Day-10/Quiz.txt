@@ -1,0 +1,56 @@
+Read 3 numbers(a,b,c) from the user and store them into
+variables.
+Find the Least Common Multiple(LCM) from the first two 
+numbers(a,b)
+and find the Greatest Common Deviser(GCD) for the second 
+two numbers(b,c).
+
+Answer:
+
+{ ~ }  » touch exam.sh
+{ ~ }  » vi exam.sh
+
+echo "Enter a: "
+read a
+echo "Enter b: "
+read b
+echo "Enter c: "
+read c
+
+gcd() {
+    a=$1
+    b=$2
+    while [ $b -ne 0 ]; do
+        temp=$b
+        b=$((a % b))
+        a=$temp
+    done
+    echo $a
+}
+
+lcm() {
+    a=$1
+    b=$2
+    gcd_value=$(gcd $a $b)
+    lcm_value=$(( (a * b) / gcd_value ))
+    echo $lcm_value
+}
+
+lcm=$(lcm $a $b)
+echo "The Least Common Multiple (LCM) of $a and $b is: $lcm"
+
+gcd=$(gcd $b $c)
+echo "The Greatest Common Divisor (GCD) of $b and $c is: $gcd"
+
+{ ~ }  » chmod 777 exam.sh
+{ ~ }  » ./exam.sh
+Enter a:
+12
+Enter b:
+18
+Enter c:
+24
+The Least Common Multiple(LCM) of 12 and 18 is: 36
+The Greatest Common Divisor(GCD) of 18 and 24 is: 6
+
+

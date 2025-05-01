@@ -1,0 +1,291 @@
+Q1).Write a code for small astrology based on your life path number for that get date of birth from user then calculate 
+life path number.
+	(Use switch case)
+	Example:-
+		Calculation for life path number:
+							a=date%10
+							b=date/10
+							c=a+b
+			if life path number :
+							1:Lucky
+							2:Carefully do your work
+							3:Stronger
+							4:Happy
+							5:Can get help
+							6:Doubt
+							7:Sad
+							8:Like
+							9:Courage
+							
+Answer:
+{ ~ }  » touch Question01.sh
+{ ~ }  » vi Question01.sh
+
+echo 'Enter your birth date: '
+read date
+ 
+a=$(($date%10))
+b=$(($date/10))
+c=$(($a+$b))
+ 
+case $c in
+1)echo "Lucky";;
+2)echo "Carefuly do your work";;
+3)echo "Storger";;
+4)echo "Happy";;
+5)echo "Can get help";;
+6)echo "Doubt";;
+7)echo "Sad";;
+8)echo "Like";;
+9)echo "Courage";;
+*)
+x=$(($c%10))
+y=$(($c/10))
+z=$(($x+$y))
+ 
+case $z in
+1)echo "Lucky";;
+2)echo "Carefuly do your work";;
+3)echo "Storger";;
+4)echo "Happy";;
+5)echo "Can get help";;
+6)echo "Doubt";;
+7)echo "Sad";;
+8)echo "Like";;
+9)echo "Courage";;
+*)echo "Try again!";;
+esac;;
+
+esac
+
+{ ~ }  » chmod 777 Question01.sh
+{ ~ }  » ./Question01.sh
+Enter your date:
+18
+Courage
+
+
+
+
+Q2).Give list of numbers then calculate the summation and multiplication using for loop.
+Example:-
+	1 2 3 4 5
+		summation = 15
+		Multiplication = 120
+		
+Answer:
+
+{ ~ }  » touch Question02.sh
+{ ~ }  » vi Question02.sh
+
+let summation=0
+let multiplication=1
+
+for num in 1 2 3 4 5
+do
+summation=$(($summation+$num))
+multiplication=$(($multiplication*$num))
+done
+echo "$summation"
+echo "$multiplication"
+
+{ ~ }  » chmod 777 Question02.sh
+{ ~ }  » ./Question02.sh
+Summation :  15
+Multiplication :  120
+
+
+Q3).Print the integers from 1 to 10 using while loop
+	
+Answer:
+
+{ ~ }  » touch Question03.sh
+{ ~ }  » vi Question03.sh
+
+let i=1
+while [ $i -le 10 ]
+do
+echo $i
+i=$(($i+1))
+done
+
+{ ~ }  » chmod 777 Question03.sh
+{ ~ }  » ./Question03.sh
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+
+Q4).Print below pattern using nested loop
+columns = 7, rows = 7
+
+	i). *
+		*	*
+		*	*	*
+		*	*	*	*
+		*	*	*	*	*
+		*	*	*	*	*	*
+		*	*	*	*	*	*	*
+
+Answer:
+{ ~ }  » touch Question04_I.sh
+{ ~ }  » vi Question04_I.sh
+
+for((i=1;i<=7;i++))
+do
+for((j=0;j<i;j++))
+do
+echo -n "*"
+done
+echo ""
+done		
+
+{ ~ }  » chmod 777 Question04_I.sh
+{ ~ }  » ./Question04_I.sh
+*
+**
+***
+****
+*****
+******
+*******
+
+	ii).*	*	*	*	*	*	*
+		*	*	*	*	*	*
+		*	*	*	*	*
+		*	*	*	*
+		*	*	*
+		*	*
+		*
+		
+	
+Answer:
+
+{ ~ }  » touch Question04_II.sh
+{ ~ }  » vi Question04_II.sh
+
+for((i=1;i<=7;i++))
+do
+for((j=7;j>i;j--))
+do
+echo -n "*"
+done
+echo ""
+done
+
+{ ~ }  » chmod 777 Question04_II.sh
+{ ~ }  » ./Question04_II.sh
+******
+*****
+****
+***
+**
+*
+
+
+	iii).1
+		 2 2
+		 3 3 3
+		 4 4 4 4
+		 5 5 5 5 5
+		 6 6 6 6 6 6
+		 
+Answer:
+
+{ ~ }  » touch Question04_III.sh
+{ ~ }  » vi Question04_III.sh
+
+for ((i=1; i<=6; i++))
+do
+    for ((j=1; j<=i; j++))
+    do
+        echo -n "$i "
+    done
+    echo
+done
+
+{ ~ }  » chmod 777 Question04_III.sh
+{ ~ }  » ./Question04_III.sh
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+6 6 6 6 6 6
+
+		 
+	iv). 1
+		 1 2
+		 1 2 3
+		 1 2 3 4
+		 1 2 3 4 5
+		 1 2 3 4 5 6
+		 
+Answer:
+
+{ ~ }  » touch Question04_IV.sh
+{ ~ }  » vi Question04_IV.sh
+
+for((i=1;i<=6;i++))
+do
+for((j=1; j<=i; j++))
+do
+echo -n $j " "
+done
+echo ""
+done
+
+{ ~ }  » chmod 777 Question04_IV.sh
+{ ~ }  » ./Question04_IV.sh
+1
+1  2
+1  2  3
+1  2  3  4
+1  2  3  4  5
+1  2  3  4  5  6
+
+		 
+	v).	  *
+		 * *
+		* * *
+	   * * * *
+	  * * * * *
+	
+Answer:
+
+{ ~ }  » touch Question04_V.sh
+{ ~ }  » vi Question04_V.sh
+
+for((i=1;i<=5;i++))
+do
+for((k=1;k<=5-i;k++))
+do
+echo -n " "
+done
+for((j=1;j<=i;j++))
+do
+echo -n "* "
+done 
+echo "" 
+done
+
+{ ~ }  » chmod 777 Question04_V.sh
+{ ~ }  » ./Question04_V.sh
+    *
+   * *
+  * * *
+ * * * *
+* * * * *
+
+
+
+
+
+

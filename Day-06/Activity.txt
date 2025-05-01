@@ -1,0 +1,288 @@
+Q1). Get the calendar and date
+{ ~ }  » cal
+      May 2025
+Su Mo Tu We Th Fr Sa
+             1  2  3
+ 4  5  6  7  8  9 10
+11 12 13 14 15 16 17
+18 19 20 21 22 23 24
+25 26 27 28 29 30 31
+
+{ ~ }  » date
+Thu, May  1, 2025  3:37:50 PM
+
+
+Q2).Get the student name and marks for the 3 subjects from user then calculate
+	Output:-
+			Enter the name : Isuru
+			Enter the marks for subject1 : 80
+			Enter the marks for subject2 : 80
+			Enter the marks for subject3 : 80
+			Total = 240
+			Average = 80
+		
+Answer:
+
+{ ~ }  » touch marks.sh  //(.sh file) - a shell script
+{ ~ }  » vi marks.sh
+
+echo "Enter the name: "
+read name
+
+echo "Enter the marks for subject1: "
+read marks1
+
+echo "Enter the marks for subject2: "
+read marks2
+
+echo "Enter the marks for subject3: "
+read marks3
+
+total = $(($marks1+$marks2+$marks3))
+avg = $(($total/3))
+
+echo "Total = " $total
+echo "Average = " $avg
+
+//chmod: Command to change file permissions.
+{ ~ }  » chmod 777 marks.sh
+
+The number 777 is in octal and represents:
+Owner: 7 → read (4) + write (2) + execute (1)
+Group: 7 → read + write + execute
+Others: 7 → read + write + execute
+calculator.sh: The target file (your shell script).
+
+// ./ tells the shell: “Run the script from the current directory.”
+{ ~ }  » ./marks.sh
+Enter the name:
+Sajidha
+Enter the marks for subject1:
+90
+Enter the marks for subject2:
+80
+Enter the marks for subject3:
+70
+Total =  240
+Average =  80
+
+		
+Q3).Create calculator with arithmetic operators.
+	Output:-
+			Enter the first number : 4
+			Enter the second number : 2
+			Summation : 6
+			Subtraction : 2
+			Division : 2
+			Multiplication : 8
+
+Answer:
+
+{ ~ }  » touch calculator.sh
+{ ~ }  » vi calculator.sh
+
+echo "Enter the first number: " 
+read number1
+
+echo "Enter the second number: "
+read number2
+
+summation=$(($number1+$number2))
+subtraction=$(($number1-$number2))
+Division=$(($number1/$number2))
+Multiplication=$(($number1*$number2))
+
+echo "The summation = " $summation
+echo "The subtraction = " $subtraction
+echo "The Division = " $Division
+echo "The Multiplication = " $Multiplication
+
+{ ~ }  » chmod 777 calculator.sh
+{ ~ }  » ./calculator.sh
+Enter the first number:
+10
+Enter the second number:
+6
+The Summation =  16
+The Subtraction =  4
+The Division =  1
+The Multiplication =  60
+
+
+Q4).Get the days based on the user input number
+	Output:-
+		Enter the number : 5
+		Friday
+		
+		Enter the number : -9
+		Unrecognized number
+		
+Answer:
+
+{ ~ }  » touch days.sh
+{ ~ }  » vi days.sh
+
+echo "Enter the number: "
+read day
+
+case $day in
+	1)
+		echo "Today is Monday"
+		;;
+	2)
+		echo "Today is Tuesday"
+		;;
+	3)
+		echo "Today is Wednesday"
+		;;
+	4)
+		echo "Today is Thursday"
+		;;
+	5)
+		echo "Today is Friday"
+		;;
+	6)
+		echo "Today is Saturday"
+		;;
+	7)
+		echo "Today is Sunday"
+		;;
+	*)
+		echo "Invalid day"
+		;;
+esac
+
+esac -to mark the end of a case statement — it's literally "case" spelled backward.
+
+{ ~ }  » chmod 777 days.sh
+{ ~ }  » ./days.sh
+Enter the number:
+5
+Today is Friday
+
+{ ~ }  » ./days.sh
+Enter the number:
+8
+Invalid day
+
+		
+Q5).Verify whether your user name is correct or not.
+(Use your name as a input)
+	Output:-
+	Enter username:
+	Mino
+	Username is correct
+	Enter username:
+	Pasi
+	Username is incorrect
+	
+Answer:
+
+{ ~ }  » touch username.sh
+{ ~ }  » vi username.sh
+
+echo 'Enter user name; '
+read name
+ 
+username="Mino"
+ 
+if [ "$username" == "$name" ]; then
+echo 'Username is correct'
+else
+echo 'Username is incorrect'
+fi
+ 
+ 
+{ ~ }  » chmod 777 username.sh
+{ ~ }  » ./username.sh
+Enter username:
+Mino
+Username is correct
+
+{ ~ }  » ./username.sh
+Enter username:
+Sajidha
+Username is incorrect
+
+	
+Q6).Output:- Enter two numbers:
+			 7	5
+			 7 is greater than 5
+			 
+	Output:- Enter two numbers:
+			 1	9
+			 1 is less than 9
+			 
+Answer:
+{ ~ }  » touch checkNumbers.sh
+{ ~ }  » vi checkNumbers.sh
+
+echo "Enter num1: "
+read num1
+
+echo "Enter num2: "
+read num2
+
+if [[ $num1 -gt $num2 ]];
+then 
+	echo "$num1 is greater than $num2"
+else
+	echo "$num1 is less than $num2"
+fi
+
+
+// [[ ... ]] is used for advanced conditional expressions.
+// -gt means "greater than" (for integers only).
+//then starts the block of code that runs if the condition is true.
+//fi ends the if block (it’s "if" spelled backwards, like esac for case).
+
+
+{ ~ }  » chmod 777 checkNumbers.sh
+{ ~ }  » ./checkNumbers.sh
+Enter num1:
+7
+Enter num2:
+5
+7 is greater than 5
+
+{ ~ }  » ./checkNumbers.sh
+Enter num1:
+1
+Enter num2:
+9
+1 is less than 9
+
+
+Q7).Create simple calculator using "expr" command same as the Q3
+
+Answer:
+
+{ ~ }  » touch simple_calculator.sh
+{ ~ }  » vi simple_calculator.sh
+
+echo "Enter the first number: "
+read num1
+echo "Enter the first number: "
+read num2
+ 
+add=$(expr $num1 + $num2)
+sub=$(expr $num1 - $num2)
+div=$(expr $num1 / $num2)
+mul=$(expr $num1 \* $num2)
+ 
+echo 'Addition: ' $add
+echo 'Substraction: ' $sub
+echo 'Division: ' $div
+echo 'Multiplication: ' $mul		
+
+
+{ ~ }  » chmod 777 simple_calculator.sh
+{ ~ }  » ./simple_calculator.sh
+Enter the first number:
+60
+Enter the second number:
+30
+Addition =  90
+Subtraction =  30
+Division =  2
+Multiplication =  1800

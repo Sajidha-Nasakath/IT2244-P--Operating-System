@@ -1,0 +1,9 @@
+awk -F, 'NR==1 || $4 > 3.5' data.csv
+
+awk -F, 'NR>1 {sum+=$4; count++} END
+{if (count > 0) print "Average GPA: " 
+sum/count}' data.csv
+
+awk -F, 'NR>1 {sum+=$3; count++} END
+{if (count>0) print "Average GPA: " sum/count; 
+else print "No data."}' data.csv
